@@ -51,6 +51,10 @@ body, html {
         font-weight: bolder;
     }
 
+    .checked {
+        color: #1976c7;
+    }
+
     .gamegrid {
         background-color: orange;
         display: flex;
