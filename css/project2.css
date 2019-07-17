@@ -51,6 +51,10 @@ body, html {
         font-weight: bolder;
     }
 
+    .stars {
+        color: white;
+    }
+
     .checked {
         color: #1976c7;
     }
