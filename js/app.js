@@ -36,6 +36,7 @@ function timer(){
             clearInterval(timer);
             document.getElementById('time').innerHTML='Winner!';
         }
+        document.getElementById('moves').innerHTML='Moves ' + moves;
     }, 1000);
 }
 
