@@ -63,18 +63,22 @@ var faceUp=[false, false, false, false, false, false, false, false, false, false
 const cards = document.querySelectorAll('.cards');
 var guess = [];
 var guessCount = 0;
+var moves = 0;
 
 var clickCardFunction = function (event) {
     console.log('Clicked!');
     card = event.target.textContent;
     console.log(card);
     console.log(cardValues[card - 1]);
+    // Check if card is face up.
     if (faceUp[card - 1] === false) {
         faceUp[card - 1] = true;
     } else {
         console.log("Card already faceup, not allowed!");
         return;
     }
+    moves++;
+    // Check if match.
     if (guessCount === 0) {
         guess[0] = cardValues[card - 1];
         guessCount++;
