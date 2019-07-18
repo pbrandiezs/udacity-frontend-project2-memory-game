@@ -58,6 +58,11 @@ function shuffle(a) {
 
 
 var cardValues=["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"];
+var card0 = document.querySelector('.card0');
+card0.addEventListener('click', function () {
+    console.log('card0 clicked!');
+    console.log(cardValues[0]);
+});
 
 timer();
 shuffle(cardValues);
