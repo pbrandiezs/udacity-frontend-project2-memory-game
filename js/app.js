@@ -99,19 +99,21 @@ var clickCardFunction = function (event) {
         guessTarget[0] = event.target; //store original
         guessTargetCard[0] = card;  //store original card position
         event.target.textContent = cardValues[card - 1];
-        event.target.style.color = "#1976c7";
+        event.target.style.color = "green";
         guessCount++;
     } else {
         guess[1] = cardValues[card - 1];
         guessTarget[1] = event.target;  //store original
         guessTargetCard[1] = card;  //store original card position
         event.target.textContent = cardValues[card - 1];
-        event.target.style.color = "#1976c7";
+        event.target.style.color = "green";
         guessCount = 0;
         if (guess[0] === guess[1]) {
             // Match!
             matches += 2;
             // matches = 16; //for testing
+            guessTarget[0].style.color = "#1976c7";
+            guessTarget[1].style.color = "#1976c7";
             if (matches === 16) {  //check if game winner
                 for (i=0;i<=15;i++) {
                     cards[i].removeEventListener('click', clickCardFunction, false);
@@ -120,13 +122,6 @@ var clickCardFunction = function (event) {
         } else {
             //No Match!
             noMatch = true;
-            //return guesses to facedown
-            //guessTarget[0].textContent = guessTargetCard[0];
-            //guessTarget[0].style.color = "#d15555";
-            //guessTarget[1].textContent = guessTargetCard[1];
-            //guessTarget[1].style.color = "#d15555";
-            //faceUp[guessTargetCard[0] - 1] = false;
-            //faceUp[guessTargetCard[1] - 1] = false;
         }
     }
 
