@@ -4,7 +4,7 @@ function timer(){
     var timer = setInterval(function(){
         document.getElementById('time').innerHTML='Seconds: ' + sec;
         sec++;
-        if (sec > 10 && sec < 15)  {
+        if (sec > 100 && sec < 150)  {
             document.getElementById('stars').innerHTML =
             '<p>\
             <span class="fa fa-star checked"></span>\
@@ -12,7 +12,7 @@ function timer(){
             <span class="fa fa-star"></span>\
             </p>';
         } 
-        if (sec >= 15 && sec <20)  {
+        if (sec >= 150 && sec <200)  {
             document.getElementById('stars').innerHTML =
             '<p>\
             <span class="fa fa-star checked"></span>\
@@ -20,7 +20,7 @@ function timer(){
             <span class="fa fa-star"></span>\
             </p>';
         } 
-        if (sec >= 20 && sec <300)  {
+        if (sec >= 200 && sec <300)  {
             document.getElementById('stars').innerHTML =
             '<p>\
             <span class="fa fa-star"></span>\
