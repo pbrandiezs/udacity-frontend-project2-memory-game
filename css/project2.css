@@ -87,3 +87,16 @@ body, html {
         justify-content: center;
         align-items: center;
     }
+
+
+    @media screen and (max-width: 500px) {
+        .cards {
+            height: 50px;
+        }
+        .status-item {
+            width: 25%;
+        }
+        .time {
+            width: 40%;
+        }
+    }
