@@ -17,7 +17,7 @@ function timer(){
     var timer = setInterval(function(){
         document.getElementById('time').innerHTML='Seconds: ' + sec;
         sec++;
-        if (sec > 100 && sec < 150)  {
+        if (moves > 10 && moves < 20)  {
             document.getElementById('stars').innerHTML =
             '<p>\
             <span class="fa fa-star checked"></span>\
@@ -25,7 +25,7 @@ function timer(){
             <span class="fa fa-star"></span>\
             </p>';
         } 
-        if (sec >= 150 && sec <200)  {
+        if (moves >= 20 && moves <30)  {
             document.getElementById('stars').innerHTML =
             '<p>\
             <span class="fa fa-star checked"></span>\
@@ -33,7 +33,7 @@ function timer(){
             <span class="fa fa-star"></span>\
             </p>';
         } 
-        if (sec >= 200 && sec <300)  {
+        if (moves >= 30)  {
             document.getElementById('stars').innerHTML =
             '<p>\
             <span class="fa fa-star"></span>\
