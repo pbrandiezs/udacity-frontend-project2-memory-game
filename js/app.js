@@ -88,12 +88,14 @@ var clickCardFunction = function (event) {
         guessTarget[0] = event.target; //store original
         guessTargetCard[0] = card;  //store original card position
         event.target.textContent = cardValues[card - 1];
+        event.target.style.color = "#1976c7";
         guessCount++;
     } else {
         guess[1] = cardValues[card - 1];
         guessTarget[1] = event.target;  //store original
         guessTargetCard[1] = card;  //store original card position
         event.target.textContent = cardValues[card - 1];
+        event.target.style.color = "#1976c7";
         guessCount = 0;
         if (guess[0] === guess[1]) {
             // Match!
@@ -108,7 +110,9 @@ var clickCardFunction = function (event) {
             //No Match!
             //return guesses to facedown
             guessTarget[0].textContent = guessTargetCard[0];
+            guessTarget[0].style.color = "#d15555";
             guessTarget[1].textContent = guessTargetCard[1];
+            guessTarget[1].style.color = "#d15555";
             faceUp[guessTargetCard[0] - 1] = false;
             faceUp[guessTargetCard[1] - 1] = false;
         }
