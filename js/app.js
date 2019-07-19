@@ -11,6 +11,10 @@ var moves = 0;  //moves counter
 var matches = 0; //matches counter 16 completes the game
 var noMatch = false; //set to true if no match from card turns
 
+var modal = document.querySelector(".modal");
+var trigger = document.querySelector(".trigger");
+var closeButton = document.querySelector(".close-button");
+
 function timer(){
     // Modified from reference at stackoverflow https://stackoverflow.com/questions/31559469/how-to-create-a-simple-javascript-timer
     var sec = 0;
@@ -48,6 +52,7 @@ function timer(){
         if (matches === 16) {
             clearInterval(timer);
             document.getElementById('time').innerHTML='Winner!';
+            modal.classList.toggle("show-modal");
         }
         document.getElementById('moves').innerHTML='Moves ' + moves;
     }, 1000);
@@ -122,6 +127,16 @@ var clickCardFunction = function (event) {
     }
 };
 
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
 // Add event listener to each card
 for (i=0;i<=15;i++) {
     cards[i].addEventListener('click', clickCardFunction, false);
@@ -135,3 +150,7 @@ shuffle(cardValues);
 
 // Uncomment for testing - display card values
 // console.log(cardValues);
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
