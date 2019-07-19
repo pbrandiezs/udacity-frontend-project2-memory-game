@@ -1,3 +1,16 @@
+
+var cardValues=["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"];
+var faceUp=[false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+
+const cards = document.querySelectorAll('.cards');
+var guess = [];  //array to hold guesses
+var guessTarget = []; //array to hold original positions when guessing
+var guessTargetCard = []; //array to hold original card position
+var guessCount = 0;  //guess pair count
+var moves = 0;  //moves counter
+var matches = 0; //matches counter 16 completes the game
+var noMatch = false; //set to true if no match from card turns
+
 function timer(){
     // Modified from reference at stackoverflow https://stackoverflow.com/questions/31559469/how-to-create-a-simple-javascript-timer
     var sec = 0;
@@ -56,19 +69,6 @@ function shuffle(a) {
     return a;
 }
 
-
-var cardValues=["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"];
-var faceUp=[false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-
-const cards = document.querySelectorAll('.cards');
-var guess = [];  //array to hold guesses
-var guessTarget = []; //array to hold original positions when guessing
-var guessTargetCard = []; //array to hold original card position
-var guessCount = 0;  //guess pair count
-var moves = 0;  //moves counter
-var matches = 0; //matches counter 16 completes the game
-var noMatch = false; //set to true if no match from card turns
-
 var clickCardFunction = function (event) {
     card = event.target.textContent;
     // Turn cards back over if previous no match.
@@ -86,7 +86,7 @@ var clickCardFunction = function (event) {
     if (faceUp[card - 1] === false) {
         faceUp[card - 1] = true;
     } else {
-        console.log("Card already faceup, not allowed!");
+        // console.log("Card already faceup, not allowed!");
         return;
     }
     moves++;
@@ -120,15 +120,18 @@ var clickCardFunction = function (event) {
             noMatch = true;
         }
     }
-
 };
 
+// Add event listener to each card
 for (i=0;i<=15;i++) {
     cards[i].addEventListener('click', clickCardFunction, false);
 }
 
-
-
+// Call timer loop
 timer();
+
+// Assign card values
 shuffle(cardValues);
-console.log(cardValues);
+
+// Uncomment for testing - display card values
+// console.log(cardValues);
