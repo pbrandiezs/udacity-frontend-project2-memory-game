@@ -40,10 +40,6 @@ function timer(){
     }, 1000);
 }
 
-function stopTimer() {
-    clearInterval(timer);
-}
-
 function shuffle(a) {
     // Fisher-Yates shuffle algorithm from stackoverflow https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
     /**
@@ -75,13 +71,7 @@ var noMatch = false; //set to true if no match from card turns
 
 var clickCardFunction = function (event) {
     card = event.target.textContent;
-    // Check if card is face up.
-    if (faceUp[card - 1] === false) {
-        faceUp[card - 1] = true;
-    } else {
-        //console.log("Card already faceup, not allowed!");
-        return;
-    }
+    // Turn cards back over if previous no match.
     if (noMatch === true) {
         //return guesses to facedown
         guessTarget[0].textContent = guessTargetCard[0];
@@ -91,6 +81,13 @@ var clickCardFunction = function (event) {
         faceUp[guessTargetCard[0] - 1] = false;
         faceUp[guessTargetCard[1] - 1] = false;
         noMatch = false;
+    }
+    // Check if card is face up.
+    if (faceUp[card - 1] === false) {
+        faceUp[card - 1] = true;
+    } else {
+        console.log("Card already faceup, not allowed!");
+        return;
     }
     moves++;
     // Check if match.
@@ -111,7 +108,6 @@ var clickCardFunction = function (event) {
         if (guess[0] === guess[1]) {
             // Match!
             matches += 2;
-            // matches = 16; //for testing
             guessTarget[0].style.color = "#1976c7";
             guessTarget[1].style.color = "#1976c7";
             if (matches === 16) {  //check if game winner
