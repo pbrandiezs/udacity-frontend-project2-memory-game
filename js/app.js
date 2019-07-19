@@ -61,7 +61,6 @@ function shuffle(a) {
 }
 
 
-
 var cardValues=["A", "B", "C", "D", "E", "F", "G", "H", "A", "B", "C", "D", "E", "F", "G", "H"];
 var faceUp=[false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
 
@@ -74,15 +73,12 @@ var moves = 0;  //moves counter
 var matches = 0; //matches counter 16 completes the game
 
 var clickCardFunction = function (event) {
-    console.log('Clicked!');
     card = event.target.textContent;
-    console.log(card);
-    console.log(cardValues[card - 1]);
     // Check if card is face up.
     if (faceUp[card - 1] === false) {
         faceUp[card - 1] = true;
     } else {
-        console.log("Card already faceup, not allowed!");
+        //console.log("Card already faceup, not allowed!");
         return;
     }
     moves++;
@@ -100,25 +96,21 @@ var clickCardFunction = function (event) {
         event.target.textContent = cardValues[card - 1];
         guessCount = 0;
         if (guess[0] === guess[1]) {
-            console.log("Match!");
+            // Match!
             matches += 2;
-            console.log("Matches " + matches);
-            matches = 16; //for testing
+            // matches = 16; //for testing
             if (matches === 16) {  //check if game winner
-                console.log("Winner!");
                 for (i=0;i<=15;i++) {
                     cards[i].removeEventListener('click', clickCardFunction, false);
                 }
             }
         } else {
-            console.log("No Match!");
+            //No Match!
             //return guesses to facedown
             guessTarget[0].textContent = guessTargetCard[0];
             guessTarget[1].textContent = guessTargetCard[1];
             faceUp[guessTargetCard[0] - 1] = false;
             faceUp[guessTargetCard[1] - 1] = false;
-            console.log('guessTarget ' + guessTarget);
-            console.log('faceUp ' + faceUp);
         }
     }
 
