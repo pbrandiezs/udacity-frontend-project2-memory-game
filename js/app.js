@@ -71,6 +71,7 @@ var guessTargetCard = []; //array to hold original card position
 var guessCount = 0;  //guess pair count
 var moves = 0;  //moves counter
 var matches = 0; //matches counter 16 completes the game
+var noMatch = false; //set to true if no match from card turns
 
 var clickCardFunction = function (event) {
     card = event.target.textContent;
@@ -80,6 +81,16 @@ var clickCardFunction = function (event) {
     } else {
         //console.log("Card already faceup, not allowed!");
         return;
+    }
+    if (noMatch === true) {
+        //return guesses to facedown
+        guessTarget[0].textContent = guessTargetCard[0];
+        guessTarget[0].style.color = "#d15555";
+        guessTarget[1].textContent = guessTargetCard[1];
+        guessTarget[1].style.color = "#d15555";
+        faceUp[guessTargetCard[0] - 1] = false;
+        faceUp[guessTargetCard[1] - 1] = false;
+        noMatch = false;
     }
     moves++;
     // Check if match.
@@ -108,13 +119,14 @@ var clickCardFunction = function (event) {
             }
         } else {
             //No Match!
+            noMatch = true;
             //return guesses to facedown
-            guessTarget[0].textContent = guessTargetCard[0];
-            guessTarget[0].style.color = "#d15555";
-            guessTarget[1].textContent = guessTargetCard[1];
-            guessTarget[1].style.color = "#d15555";
-            faceUp[guessTargetCard[0] - 1] = false;
-            faceUp[guessTargetCard[1] - 1] = false;
+            //guessTarget[0].textContent = guessTargetCard[0];
+            //guessTarget[0].style.color = "#d15555";
+            //guessTarget[1].textContent = guessTargetCard[1];
+            //guessTarget[1].style.color = "#d15555";
+            //faceUp[guessTargetCard[0] - 1] = false;
+            //faceUp[guessTargetCard[1] - 1] = false;
         }
     }
 
