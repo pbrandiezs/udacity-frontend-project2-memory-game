@@ -52,6 +52,7 @@ function timer(){
         if (matches === 16) {
             clearInterval(timer);
             document.getElementById('time').innerHTML='Winner!';
+            document.getElementById('modal-text').textContent = 'Winner!! Seconds: ' + sec + ' Moves: ' + moves;
             modal.classList.toggle("show-modal");
         }
         document.getElementById('moves').innerHTML='Moves ' + moves;
@@ -151,6 +152,6 @@ shuffle(cardValues);
 // Uncomment for testing - display card values
 // console.log(cardValues);
 
-trigger.addEventListener("click", toggleModal);
+// trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);

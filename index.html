@@ -31,7 +31,7 @@
                 </div>
                 <div class="refresh status-item">
                     <p>
-                        <a href="index.html"><i class="fa fa-refresh status status-item" aria-hidden="true"></i></a>
+                        <a class="nounderline" href="index.html"><i class="fa fa-refresh status status-item" aria-hidden="true"></i></a>
                     </p>
                 </div>
             </div>
@@ -58,11 +58,12 @@
         </main>
 
         <!-- Reference modal example https://sabe.io/tutorials/how-to-create-modal-popup-box-->
-        <button class="trigger">Click here to trigger the modal!</button>
+        <!--<button class="trigger">Click here to trigger the modal!</button> -->
         <div class="modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
-                <h1>Hello, I am a modal!</h1>
+                <h1 id="modal-text">Hello, I am a modal!</h1>
+                <a class="play-again" href="index.html">Click to play again?</a>
             </div>
         </div>
         <script src="js/app.js"></script>
