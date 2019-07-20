@@ -17,6 +17,9 @@ var closeButton = document.querySelector(".close-button");
 
 function timer(){
     // Modified from reference at stackoverflow https://stackoverflow.com/questions/31559469/how-to-create-a-simple-javascript-timer
+    /**
+    * Main timer function controls game status
+    */
     var sec = 0;
     var timer = setInterval(function(){
         document.getElementById('time').innerHTML='Seconds: ' + sec;
@@ -76,6 +79,10 @@ function shuffle(a) {
 }
 
 var clickCardFunction = function (event) {
+    /**
+    * Acts when a card is clicked.
+    * @param event click event.
+    */
     card = event.target.textContent;
     // Turn cards back over if previous no match.
     if (noMatch === true) {
@@ -129,10 +136,17 @@ var clickCardFunction = function (event) {
 };
 
 function toggleModal() {
+    /**
+    * Toggle modal display.
+    */
     modal.classList.toggle("show-modal");
 }
 
 function windowOnClick(event) {
+    /**
+    * Toggle modal.
+    * @param event click event
+    */
     if (event.target === modal) {
         toggleModal();
     }
@@ -143,7 +157,7 @@ for (i=0;i<=15;i++) {
     cards[i].addEventListener('click', clickCardFunction, false);
 }
 
-// Call timer loop
+// Call timer loop manages game status
 timer();
 
 // Assign card values
@@ -152,6 +166,7 @@ shuffle(cardValues);
 // Uncomment for testing - display card values
 // console.log(cardValues);
 
+// manage modal popup
 // trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
