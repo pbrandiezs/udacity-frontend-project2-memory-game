@@ -28,7 +28,7 @@ function timer(){
             <span class="fa fa-star checked"></span>\
             <span class="fa fa-star"></span>\
             </p>';
-        } 
+        }
         if (moves >= 20 && moves <30)  {
             document.getElementById('stars').innerHTML =
             '<p>\
@@ -36,7 +36,7 @@ function timer(){
             <span class="fa fa-star"></span>\
             <span class="fa fa-star"></span>\
             </p>';
-        } 
+        }
         if (moves >= 30)  {
             document.getElementById('stars').innerHTML =
             '<p>\
@@ -44,7 +44,7 @@ function timer(){
             <span class="fa fa-star"></span>\
             <span class="fa fa-star"></span>\
             </p>';
-        } 
+        }
         if (sec >= 300) {
             clearInterval(timer);
             document.getElementById('time').innerHTML='Game Over!';
