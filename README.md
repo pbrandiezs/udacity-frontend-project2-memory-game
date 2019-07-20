@@ -2,7 +2,7 @@
 Udacity Front End Development Project 2 - Memory Game
 
 
-# Program: index.html, css/project1.css, js/app.js
+# Program: index.html, css/project2.css, js/app.js
 * Author: Perry Brandiezs
 * Date: July 20, 2019
 
@@ -16,6 +16,9 @@ https://www.w3schools.com/howto/howto_css_star_rating.asp
 https://sabe.io/tutorials/how-to-create-modal-popup-box
 * Reference example modified to implement javascript timer from stackoverflow
 https://stackoverflow.com/questions/31559469/how-to-create-a-simple-javascript-timer
+* Reference Fisher-Yates shuffle algorithm from stackoverflow
+https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+
 * Font Awesome used to implement icon for a reset button
 https://fontawesome.com
 
