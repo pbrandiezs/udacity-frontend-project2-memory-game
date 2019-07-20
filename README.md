@@ -26,7 +26,7 @@ Copy the entire directory contents to the hosting server, including the css and 
 The website has been tested with Nexus 5, IPAD, and desktop web browsers, through Chrome dev-tools emulation.
 
 ### GamePlay
-* To win the game, find matching cards by clicking on them, until all 16 cards are matched.
+* To win the game, find matching card pairs by clicking on them, until all 16 cards are matched.
 * Your play rating starts with 3 stars, which gradually decreases as play continues after
 10, 20, and 30 moves.
 * To win the game, it must be completed within 300 seconds.
